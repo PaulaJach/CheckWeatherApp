@@ -1,0 +1,34 @@
+body {
+	margin: 0;
+	padding:0;
+	background-color: lightblue;
+
+}
+
+.header {
+	text-align: center;
+	color: darkblue;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.callendar {
+	display: flex;
+	flex-direction: row;
+	align-content: space-between;
+
+
+
+}
+.date {
+	display: flex;
+
+
+}
+.time {
+	display: flex;
+}
