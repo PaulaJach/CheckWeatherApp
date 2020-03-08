@@ -3,43 +3,68 @@
 <head>
 	<meta charset="UTF-8">
 	<title>CheckWeatherApp</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-	<header>
-		<h1 class="header">What's the Weather Today?</h1>
-	</header>
+	<div class="container">
+		<header>
+			<h4 class="header">What's the Weather Today?</h4>
+		</header>
 
-	<section class="main">
-		<div class="callendar">
+		<section class="main">
+			<div class="calendar">
+				<div id="clock-container">
+					<i class="small material-icons ">access_time</i>
+					<p id="clock"></p>
+				</div>
+				<div id="date-container">
+					<i class="small material-icons">event_note</i>
+					<p id="date"></p>
+				</div>
+			</div>
 
-			<div class="date">Date</div>
-			<div class="time">Time</div>
-		</div>
-
-
-
-		<div>
-		<div id="search">
-			<label for="city">City Name</label>
-			<input type="text" id="city">
-			<button type="button">Show Weather!</button>
-		</div> 
-
-		    <div id="load">Loading...</div>
-   			 <div id="weather">
-        <h1 id="weatherCity">City Name</h1>
-
-        <div id="weatherDescription">Weather Description</div>
-        <div id="weatherTemperature"><button>Temperature</button></div>
-
-    </div>
+			<div class="row">
+				<form class="col s12">
+					<div class="row">
+						<div class="input-field col s12">
+							<textarea id="city" class="materialize-textarea"></textarea>
+							<label for="city">City name</label>
+							<button class="waves-effect waves-light btn" id="searchWeatcher">
+								<i class="material-icons right">cloud</i>
+								Show Weather
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			
+			<div id="weather" class="col s12 m7 hide">
+				<div class="card horizontal weather-card">
+				  <div class="card-stacked">
+					<div id="search" class="card-content">
+						<h4 id="weatherCity" class="city-name">City Name</h4>
+						<h6 id="country"></h6>	
+					</div>
+					<div class="card-action">
+						<h6 id="weatherDescription">Weather Description</h6>
+						<h6 id="weatherTemperature">Temperature</h6>
+						<button id="convertTemp" class="btn-small btn-convert">
+							<i class="material-icons right">loop</i>
+							Convert to Fahrenheit
+						</button>
+						<h6 id="converted"></h6>
+					</div>
+				  </div>
+				</div>
+			</div>
+		</section>
 	</div>
 		
-	</section>
-
-	
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="calendar.js"></script>
+	<script src="index.js"></script>
 </body>
 </html>
