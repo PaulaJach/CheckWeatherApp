@@ -9,7 +9,6 @@ body {
 }
 
 .content {
-	padding: 50px 0;
 	background-image: url('weather2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -19,24 +18,14 @@ body {
 	display: flex;
 	align-items: center;
 }
-.main {
-	
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	
-	
-}
-
 
 .header {
 	text-align: center;
-	color: #34494e;
+	color: #f86262;
 	padding-bottom: 20px;
 	margin-top: 0;
 	width: 100%;
+	text-shadow: 1px 1px 1px black;
 }
 
 .calendar {
@@ -44,25 +33,29 @@ body {
 	justify-content: flex-end;
 	justify-items: center;
 	text-align: center;
-	color: #4d004d;
+	color: #fd5454;
+	text-shadow: 1px 1px 1px black;
+	letter-spacing: 1px;
 }
 
 #clock-container {
 	margin-right: 20px;
 }
+.materialize-textarea {
+	color: white;
+}
 
 .weather-card {
-	background-color: rgba(255, 255, 255, .5);
+	background-color: rgba(255, 255, 255, .7);
 }
 .card-content {
-	
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
 }
 
 .city-name {
-	color: #670067;
+	color: #fd5454;
 	margin: 0;
 }
 
@@ -70,5 +63,12 @@ body {
 	margin: 10px 0;
 }
 
+
+@media (max-width: 575.98px) { 
+	.header {
+		font-size: 25px;
+	}
+	
+}
 
 

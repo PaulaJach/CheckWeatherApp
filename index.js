@@ -25,7 +25,6 @@ searchWeatherButton.addEventListener('click', (e) => {
         .then(response => response.json())
         .then(data => {
             if(data.length !== 0) {
-                console.log(data);
                 searchedCity = cityName;
                 countryName = data.sys.country;
                 weatherDetails = data.weather[0].description.toUpperCase();
