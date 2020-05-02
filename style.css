@@ -9,7 +9,7 @@ body {
 }
 
 .content {
-	background-image: url('weather2.jpg');
+	background-image: url('img/weather2.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
