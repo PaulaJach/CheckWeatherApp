@@ -2,7 +2,7 @@ const actualDate = document.getElementById("date");
 const options = {weekday: "long", month: "short", day: "numeric"};
 actualDate.innerHTML = new Date().toLocaleDateString("en-US", options);
 
-function showTime() {
+export function showTime() {
     const today = new Date();
     let hours = today.getHours();
     let minutes = today.getMinutes();

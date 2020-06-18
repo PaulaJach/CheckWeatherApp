@@ -9,7 +9,8 @@ body {
 }
 
 .content {
-	background-image: url('img/weather2.jpg');
+	// background-image: url('img/weather2.jpg');
+	background-color: blue;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -63,12 +64,9 @@ body {
 	margin: 10px 0;
 }
 
-
-@media (max-width: 575.98px) { 
-	.header {
-		font-size: 25px;
-	}
+// @media (max-width: 575.98px) { 
+// 	.header {
+// 		font-size: 25px;
+// 	}
 	
-}
-
-
+// }

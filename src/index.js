@@ -1,3 +1,8 @@
+import '../src/scss/styles.scss';
+import './calendar';
+
+
+
 const searchWeatherButton = document.querySelector('#searchWeatcher');
 
 searchWeatherButton.addEventListener('click', (e) => {
@@ -9,7 +14,7 @@ searchWeatherButton.addEventListener('click', (e) => {
         let countryName = document.querySelector('#country');
         let weatherDetails = document.querySelector('#weatherDescription');
         let temperature = document.querySelector('#weatherTemperature');
-        const apiKey = '7060ee9b041b9b36a67d9bc06873b71b';
+        const apiKey = process.env.WEATHER_APP_APIKEY;
         const url = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
     
         if (cityName.length === 0) {
@@ -25,21 +30,19 @@ searchWeatherButton.addEventListener('click', (e) => {
         .then(response => response.json())
         .then(data => {
             if(data.length !== 0) {
-                searchedCity = cityName;
-                countryName = data.sys.country;
+                // countryName = data.sys.country;
                 weatherDetails = data.weather[0].description.toUpperCase();
                 temperature = data.main.temp;
                 updateWeather(weatherBox);
             }
-            else {
-                alert('Something went wrong');
-            } 
+   
+     
         });
         
         const updateWeather = () => {
             weatherBox.classList.remove('hide');
             weatherCity.innerHTML = cityName;
-            country.innerHTML = `Country: ${countryName}`;
+            // country.innerHTML = `Country: ${countryName}`;
             weatherDescription.innerHTML = `Current weather: ${weatherDetails}`;
             weatherTemperature.innerHTML = `Temperature: ${temperature} \xB0C`;
             
