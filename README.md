@@ -1,9 +1,27 @@
 # CheckWeatherApp
-this application allows to check current weather in different cities on the world.
+In this application you can check current weather in different cities on the world.
 
-To create this project, I used:
-- javaScript,
-- flexbox,
-- fetchAPI,
-- open weather API (https://openweathermap.org/),
-- Materialize CSS Framework
+## Technologies used in project:
+* javaScript,
+* flexbox,
+* fetchAPI,
+* Materialize CSS Framework
+* webpack
+
+### Install dependencies
+```bash
+$ yarn
+```
+
+### Build
+```bash
+$ yarn build
+```
+
+All builded files will be in `dist` directory.
+
+### Run in dev mode
+```bash
+$ yarn dev
+```
+
