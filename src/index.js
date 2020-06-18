@@ -2,7 +2,6 @@ import '../src/scss/styles.scss';
 import './calendar';
 
 
-
 const searchWeatherButton = document.querySelector('#searchWeatcher');
 
 searchWeatherButton.addEventListener('click', (e) => {
@@ -29,20 +28,25 @@ searchWeatherButton.addEventListener('click', (e) => {
         })
         .then(response => response.json())
         .then(data => {
+            if(data.cod === "404") {
+                alert('Invalid city name');
+                return
+            }
             if(data.length !== 0) {
-                // countryName = data.sys.country;
+                countryName = data.sys.country;
                 weatherDetails = data.weather[0].description.toUpperCase();
                 temperature = data.main.temp;
                 updateWeather(weatherBox);
-            }
-   
-     
+            }    
+        })
+        .catch(error => {
+            throw error;
         });
-        
+           
         const updateWeather = () => {
             weatherBox.classList.remove('hide');
             weatherCity.innerHTML = cityName;
-            // country.innerHTML = `Country: ${countryName}`;
+            country.innerHTML = `Country: ${countryName}`;
             weatherDescription.innerHTML = `Current weather: ${weatherDetails}`;
             weatherTemperature.innerHTML = `Temperature: ${temperature} \xB0C`;
             
